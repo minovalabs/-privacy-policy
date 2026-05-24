@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kreeda TV — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0d1117;
+    --bg-soft:   #131a23;
+    --surface:   #161e29;
+    --surface-2: #1c2533;
+    --border:    #243044;
+    --text:      #e6edf3;
+    --text-dim:  #8b98a9;
+    --text-soft: #b6c0cf;
+    --accent:    #ff5b1f;   /* sport orange */
+    --accent-2:  #ffd23f;   /* highlight yellow */
+    --accent-3:  #1ed760;   /* fresh green */
+    --danger:    #ff4d6d;
+    --shadow:    0 20px 60px rgba(0,0,0,.45);
+    --radius:    14px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Geist', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(255,91,31,.18), transparent 60%),
+      radial-gradient(700px 400px at 0% 110%, rgba(30,215,96,.12), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---------- TOP STRIP ---------- */
+  .topstrip {
+    position: relative; z-index: 2;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,23,.7);
+    backdrop-filter: blur(8px);
+  }
+  .topstrip-inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-dim);
+  }
+  .topstrip a { color: var(--text-soft); text-decoration: none; }
+  .topstrip a:hover { color: var(--accent-2); }
+  .brand-mini {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Bricolage Grotesque', serif;
+    font-weight: 800; color: var(--text);
+    font-size: 15px; letter-spacing: -.01em;
+  }
+  .brand-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto;
+    padding: 80px 24px 60px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(255,91,31,.08);
+    border: 1px solid rgba(255,91,31,.25);
+    padding: 8px 14px; border-radius: 999px;
+    font-weight: 500;
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 10px var(--accent);
+  }
+  h1.hero-title {
+    font-family: 'Bricolage Grotesque', serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    margin: 22px 0 18px;
+  }
+  h1.hero-title .accent { color: var(--accent); }
+  h1.hero-title .underline {
+    position: relative; display: inline-block;
+  }
+  h1.hero-title .underline::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; bottom: 6px; height: 14px;
+    background: var(--accent-2);
+    opacity: .35; z-index: -1;
+    transform: skewX(-6deg);
+  }
+  .hero-sub {
+    max-width: 640px;
+    color: var(--text-soft);
+    font-size: 1.1rem;
+  }
+  .hero-meta {
+    margin-top: 32px;
+    display: flex; flex-wrap: wrap; gap: 24px;
+    font-size: 13px; color: var(--text-dim);
+  }
+  .hero-meta span strong {
+    color: var(--text); font-weight: 600;
+    margin-left: 6px;
+  }
+
+  /* ---------- PROMISE STRIP ---------- */
+  .promise {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 20px auto 0;
+    padding: 0 24px;
+  }
+  .promise-grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .promise-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative; overflow: hidden;
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .promise-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .promise-card .ico {
+    width: 42px; height: 42px;
+    display: grid; place-items: center;
+    border-radius: 10px;
+    background: rgba(255,91,31,.1);
+    color: var(--accent);
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .promise-card h3 {
+    margin: 0 0 6px;
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: 1.1rem; font-weight: 700;
+    letter-spacing: -.015em;
+  }
+  .promise-card p {
+    margin: 0; color: var(--text-dim); font-size: .93rem;
+  }
+  @media (max-width: 720px) {
+    .promise-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto;
+    padding: 60px 24px 80px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+  }
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; gap: 24px; }
+    nav.toc { position: static !important; }
+  }
+
+  /* ---------- TOC ---------- */
+  nav.toc {
+    position: sticky; top: 24px;
+    align-self: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  nav.toc h4 {
+    margin: 0 0 14px;
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--text-dim); font-weight: 600;
+  }
+  nav.toc ol {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: toc;
+  }
+  nav.toc li { counter-increment: toc; margin-bottom: 2px; }
+  nav.toc a {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 8px 10px; border-radius: 8px;
+    text-decoration: none; color: var(--text-soft);
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+  }
+  nav.toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--text-dim); font-size: .72rem;
+    font-variant-numeric: tabular-nums;
+    min-width: 22px;
+  }
+  nav.toc a:hover {
+    background: var(--surface-2); color: var(--text);
+  }
+  nav.toc a:hover::before { color: var(--accent); }
+
+  /* ---------- CONTENT ---------- */
+  main { min-width: 0; }
+  section {
+    margin-bottom: 56px;
+    scroll-margin-top: 24px;
+  }
+  section .sec-num {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: 12px; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    margin-bottom: 12px;
+  }
+  section .sec-num .num {
+    background: var(--accent); color: #0d1117;
+    padding: 3px 9px; border-radius: 6px;
+    font-weight: 800;
+  }
+  section h2 {
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -.025em;
+    line-height: 1.15;
+    margin: 0 0 18px;
+  }
+  section p, section li {
+    color: var(--text-soft);
+    font-size: 1rem;
+  }
+  section ul {
+    padding-left: 0; list-style: none;
+  }
+  section ul li {
+    position: relative;
+    padding: 10px 0 10px 26px;
+    border-bottom: 1px dashed var(--border);
+  }
+  section ul li:last-child { border-bottom: none; }
+  section ul li::before {
+    content: "▸";
+    position: absolute; left: 4px; top: 10px;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  section strong { color: var(--text); font-weight: 600; }
+  section a {
+    color: var(--accent-2);
+    text-decoration: underline;
+    text-decoration-color: rgba(255,210,63,.4);
+    text-underline-offset: 3px;
+  }
+  section a:hover { text-decoration-color: var(--accent-2); }
+
+  .callout {
+    background: linear-gradient(135deg, rgba(255,91,31,.08), rgba(255,210,63,.04));
+    border: 1px solid rgba(255,91,31,.25);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: .95rem;
+    color: var(--text-soft);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-card {
+    background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+    margin-top: 32px;
+    position: relative; overflow: hidden;
+  }
+  .contact-card::before {
+    content: "";
+    position: absolute; top: -50%; right: -20%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,91,31,.15), transparent 60%);
+    pointer-events: none;
+  }
+  .contact-card h3 {
+    font-family: 'Bricolage Grotesque', serif;
+    font-size: 1.6rem; font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -.02em;
+  }
+  .contact-card p {
+    color: var(--text-dim); margin: 0 0 22px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #0d1117;
+    padding: 13px 26px; border-radius: 999px;
+    text-decoration: none; font-weight: 600;
+    font-size: .95rem;
+    transition: transform .2s, box-shadow .2s;
+    position: relative; z-index: 1;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255,91,31,.35);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+    padding: 36px 24px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: .85rem;
+    position: relative; z-index: 1;
+  }
+  footer .badges {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px; margin-top: 16px;
+  }
+  footer .badge {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: 999px;
+    font-size: .72rem; letter-spacing: .04em;
+    color: var(--text-soft);
+  }
+
+  /* selection */
+  ::selection { background: var(--accent); color: #0d1117; }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="topstrip">
+  <div class="topstrip-inner">
+    <div class="brand-mini"><span class="brand-dot"></span> Kreeda TV</div>
+    <div>Privacy Policy</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">Privacy · Trust · Transparency</div>
+  <h1 class="hero-title">
+    Your data plays<br>
+    by <span class="underline"><span class="accent">your</span> rules.</span>
+  </h1>
+  <p class="hero-sub">
+    This policy explains what Kreeda TV collects, what we don't, and how we keep
+    your information secure. Written in plain English — because privacy shouldn't
+    need a translator.
+  </p>
+  <div class="hero-meta">
+    <span>Effective: <strong>January 1, 2026</strong></span>
+    <span>Last Updated: <strong>May 24, 2026</strong></span>
+    <span>Distribution: <strong>Google Play Store</strong></span>
+  </div>
+</header>
+
+<!-- PROMISE STRIP -->
+<div class="promise">
+  <div class="promise-grid">
+    <div class="promise-card">
+      <div class="ico">🚫</div>
+      <h3>No Selling</h3>
+      <p>We never sell your personal data to advertisers, brokers, or anyone else.</p>
+    </div>
+    <div class="promise-card">
+      <div class="ico">📵</div>
+      <h3>Minimal Collection</h3>
+      <p>We only collect what the app genuinely needs to function and improve.</p>
+    </div>
+    <div class="promise-card">
+      <div class="ico">🔒</div>
+      <h3>You're in Control</h3>
+      <p>Clear your data, revoke permissions, or uninstall — anytime, no questions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="wrap">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#s1">Who We Are</a></li>
+      <li><a href="#s2">Scope of This Policy</a></li>
+      <li><a href="#s3">Data We Collect</a></li>
+      <li><a href="#s4">How We Use Data</a></li>
+      <li><a href="#s5">Storage &amp; Retention</a></li>
+      <li><a href="#s6">Data Sharing</a></li>
+      <li><a href="#s7">Third-Party Services</a></li>
+      <li><a href="#s8">Data Security</a></li>
+      <li><a href="#s9">Your Rights</a></li>
+      <li><a href="#s10">Children's Privacy</a></li>
+      <li><a href="#s11">Policy Changes</a></li>
+      <li><a href="#s12">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- CONTENT -->
+  <main>
+
+    <section id="s1">
+      <div class="sec-num"><span class="num">01</span> Who We Are</div>
+      <h2>The team behind Kreeda TV</h2>
+      <p>
+        We are <strong>Kreeda TV</strong> ("Developer," "we," "our," or "us"),
+        an independent mobile application developer publishing sports-focused
+        streaming and entertainment applications on the Google Play Store. Our
+        apps are built for fans who want fast, reliable access to live sports
+        content and related media.
+      </p>
+      <p>
+        This Privacy Policy governs the Kreeda TV application and any companion
+        apps we publish. By installing and using Kreeda TV, you agree to the
+        practices described in this policy.
+      </p>
+    </section>
+
+    <section id="s2">
+      <div class="sec-num"><span class="num">02</span> Scope</div>
+      <h2>Where this policy applies</h2>
+      <p>
+        This Privacy Policy applies to <strong>all mobile applications</strong>
+        developed and published by Kreeda TV on the Google Play Store, including:
+      </p>
+      <ul>
+        <li>Live sports streaming and IPTV playback (M3U playlist players, channel guides)</li>
+        <li>Sports highlights, scores, and entertainment apps</li>
+        <li>Companion utilities, media tools, and related products</li>
+        <li>Any current or future apps we release under the Kreeda TV name</li>
+      </ul>
+      <p>
+        Where a specific app has unique privacy considerations, we may supplement
+        this policy with an in-app notice. Read this policy as the baseline for
+        everything we publish.
+      </p>
+    </section>
+
+    <section id="s3">
+      <div class="sec-num"><span class="num">03</span> Data We Collect</div>
+      <h2>What we collect — and what we don't</h2>
+      <p>We collect only the minimum data necessary. The exact data depends on the app and the features you use:</p>
+      <ul>
+        <li><strong>Device Information:</strong> Device model, manufacturer, Android OS version, screen resolution, language, and app version — used for compatibility and bug fixing.</li>
+        <li><strong>Usage &amp; Analytics Data:</strong> Screens visited, features used, session duration, and button interactions — collected anonymously to understand how the app is used.</li>
+        <li><strong>Crash &amp; Error Reports:</strong> Automatically generated logs when the app crashes, including device state and error stack trace — used to fix bugs. No personal data is included.</li>
+        <li><strong>App-Specific User Data (Local Only):</strong> Data you enter inside the app (URLs, playlist links, favorites, settings, preferences) is stored locally on your device. We cannot access it.</li>
+        <li><strong>Network Information:</strong> Connection type (Wi-Fi or mobile data) and general IP address — used only for optimizing content delivery and not retained beyond the active session.</li>
+        <li><strong>Permissions-Based Data:</strong> If the app requests device permissions (storage, network state, etc.), it will only access that data when you use a feature that requires it. Permission access is always opt-in.</li>
+      </ul>
+      <div class="callout">
+        <strong>What we do NOT collect:</strong> your name, email address, phone number,
+        payment information, contacts, messages, or any other personally identifiable
+        information — unless you voluntarily provide it when contacting our support.
+      </div>
+    </section>
+
+    <section id="s4">
+      <div class="sec-num"><span class="num">04</span> How We Use Data</div>
+      <h2>What we do with what we collect</h2>
+      <p>Data we collect is used exclusively for these purposes:</p>
+      <ul>
+        <li><strong>App Operation:</strong> To provide the core features and functionality of Kreeda TV.</li>
+        <li><strong>Performance Optimization:</strong> To detect and fix crashes, reduce buffering, and improve playback stability.</li>
+        <li><strong>User Experience:</strong> To remember your settings, preferences, and in-app configurations between sessions.</li>
+        <li><strong>Product Improvement:</strong> To understand which features are most useful using anonymous, aggregated analytics.</li>
+        <li><strong>Support:</strong> If you contact us, we use the information you voluntarily share (device details, error descriptions) to resolve your issue.</li>
+        <li><strong>Legal Compliance:</strong> To meet our obligations under applicable laws and regulations.</li>
+      </ul>
+      <p>
+        We do <strong>not</strong> use your data for advertising targeting,
+        behavioral profiling, or any commercial purpose beyond operating and
+        improving the app.
+      </p>
+    </section>
+
+    <section id="s5">
+      <div class="sec-num"><span class="num">05</span> Storage &amp; Retention</div>
+      <h2>Where data lives and for how long</h2>
+      <ul>
+        <li><strong>Local Device Storage:</strong> User-generated data (settings, configurations, favorites, history) is stored on your device only and is never uploaded to our servers.</li>
+        <li><strong>Analytics &amp; Crash Data:</strong> Anonymous diagnostic data is retained by third-party analytics services (see Section 7) for up to 14 months, after which it is automatically deleted.</li>
+        <li><strong>Support Communications:</strong> If you email us for support, messages are retained only as long as necessary to resolve your issue, and no longer than 12 months.</li>
+        <li><strong>Deletion on Uninstall:</strong> All locally stored app data is permanently removed from your device when you uninstall Kreeda TV.</li>
+      </ul>
+      <p>We do not operate a server-side user database. We do not store personal profiles or accounts associated with you.</p>
+    </section>
+
+    <section id="s6">
+      <div class="sec-num"><span class="num">06</span> Data Sharing</div>
+      <h2>Who else sees your data</h2>
+      <p>We do not sell, rent, or trade your information. Data may only be shared in these strictly limited circumstances:</p>
+      <ul>
+        <li><strong>Analytics Providers:</strong> Anonymized, aggregated usage data with services like Google Firebase Analytics. No personally identifiable information is included.</li>
+        <li><strong>Crash Reporting Services:</strong> Automated error logs (no personal data) with services like Firebase Crashlytics to help us identify and fix technical issues.</li>
+        <li><strong>Legal Obligations:</strong> If required by law, court order, or government request, or to enforce our Terms of Service or protect user safety.</li>
+        <li><strong>Business Transfer:</strong> In the unlikely event of a merger or acquisition, user data may transfer to the new entity with at least 30 days' prior notice to users.</li>
+      </ul>
+      <div class="callout">
+        <strong>Third-party content:</strong> Kreeda TV may connect directly to
+        third-party servers based on URLs, playlists, or links you provide.
+        Those connections are governed by the third party's own privacy policy —
+        not ours.
+      </div>
+    </section>
+
+    <section id="s7">
+      <div class="sec-num"><span class="num">07</span> Third-Party Services</div>
+      <h2>Services we rely on</h2>
+      <p>Our apps may use the following third-party services, each subject to their own privacy policy:</p>
+      <ul>
+        <li><strong>Google Firebase Analytics</strong> — Anonymous app usage analytics. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a></li>
+        <li><strong>Firebase Crashlytics</strong> — Automated crash and error reporting. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a></li>
+        <li><strong>Google Play Services</strong> — Core Android services including app licensing and update delivery. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a></li>
+        <li><strong>Google AdMob (if applicable)</strong> — If a specific app displays ads, AdMob may collect advertising identifiers. Opt out via Android Settings → Google → Ads → Opt out of Ads Personalization. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a></li>
+        <li><strong>ExoPlayer / AndroidX Media3</strong> — Open-source media playback library (Google). Collects no data.</li>
+      </ul>
+      <p>Not all services are used in every app. Only services relevant to the app you're using will be active.</p>
+    </section>
+
+    <section id="s8">
+      <div class="sec-num"><span class="num">08</span> Data Security</div>
+      <h2>How we protect your data</h2>
+      <p>We take reasonable and industry-standard measures to protect your data:</p>
+      <ul>
+        <li><strong>Encryption in Transit:</strong> All data sent between the app and external services uses HTTPS/TLS encryption.</li>
+        <li><strong>Local Data Encryption:</strong> Sensitive locally stored data (such as credentials) uses Android's encrypted SharedPreferences or Keystore where applicable.</li>
+        <li><strong>Minimal Data Collection:</strong> The less data we collect, the less there is to protect. We follow a strict data minimization approach.</li>
+        <li><strong>No Central Database:</strong> Since we do not maintain a user database, there is no central server holding your personal information that could be compromised.</li>
+        <li><strong>Regular Updates:</strong> We release app updates to patch security vulnerabilities. Keep the app updated for best protection.</li>
+      </ul>
+      <p>No digital system can guarantee 100% security. We encourage you to protect your device with a screen lock and exercise caution when granting app permissions.</p>
+    </section>
+
+    <section id="s9">
+      <div class="sec-num"><span class="num">09</span> Your Rights</div>
+      <h2>Your rights and choices</h2>
+      <p>You have full control over your data. Here's what you can do at any time:</p>
+      <ul>
+        <li><strong>Clear App Data:</strong> Android Settings → Apps → Kreeda TV → Storage → Clear Data to erase all locally stored data.</li>
+        <li><strong>Revoke Permissions:</strong> Manage storage, network, or other permissions via Android Settings → Apps → Kreeda TV → Permissions.</li>
+        <li><strong>Opt Out of Analytics:</strong> Kreeda TV may include a Settings → Privacy toggle to disable anonymous analytics collection.</li>
+        <li><strong>Opt Out of Ad Personalization:</strong> Android Settings → Google → Ads → Opt out of Ads Personalization.</li>
+        <li><strong>Uninstall:</strong> Removing the app permanently deletes all local data immediately.</li>
+        <li><strong>Data Deletion Request:</strong> For any data you voluntarily shared with us (via support email), contact us and we will process your deletion request within 30 days.</li>
+      </ul>
+      <p>Users in certain regions (EU/EEA, California, India, etc.) may have additional rights such as data portability and the right to object to processing. Contact us to exercise these rights.</p>
+    </section>
+
+    <section id="s10">
+      <div class="sec-num"><span class="num">10</span> Children's Privacy</div>
+      <h2>Protections for younger users</h2>
+      <p>
+        Kreeda TV is intended for users who are at least <strong>13 years old</strong>
+        (or 16 in the European Economic Area). We do not knowingly collect
+        personal information from children under these ages.
+      </p>
+      <p>
+        Some content available through Kreeda TV may not be suitable for younger
+        viewers, depending on external sources connected by the user. Parents
+        are encouraged to supervise usage and utilize Android's built-in
+        parental controls.
+      </p>
+      <p>
+        If you are a parent or guardian and believe your child has provided us
+        with personal information, contact us immediately at
+        <a href="mailto:minovalabs@gmail.com">minovalabs@gmail.com</a>
+        and we will promptly investigate and delete any such information.
+      </p>
+    </section>
+
+    <section id="s11">
+      <div class="sec-num"><span class="num">11</span> Policy Changes</div>
+      <h2>How we communicate updates</h2>
+      <p>We may update this Privacy Policy from time to time as our apps evolve or legal requirements change. When we make significant updates, we will:</p>
+      <ul>
+        <li>Update the "Last Updated" date at the top of this page.</li>
+        <li>Display an in-app notification on the next launch after an update is published.</li>
+        <li>Update the privacy policy URL in the Google Play Store listing for affected apps.</li>
+      </ul>
+      <p>
+        Review this policy periodically. Continued use of Kreeda TV after
+        changes take effect constitutes your acceptance of the updated policy.
+        For major changes that significantly affect your rights, we will seek
+        fresh consent where required by law.
+      </p>
+    </section>
+
+    <section id="s12">
+      <div class="sec-num"><span class="num">12</span> Contact</div>
+      <h2>Get in touch</h2>
+      <p>Questions, concerns, or a data deletion request? We respond within <strong>2 business days</strong>.</p>
+
+      <div class="contact-card">
+        <h3>We're here to help.</h3>
+        <p>Reach out anytime — privacy questions take priority.</p>
+        <a class="btn" href="mailto:minovalabs@gmail.com">
+          ✉️ minovalabs@gmail.com
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div>© 2026 Kreeda TV. All rights reserved.</div>
+  <div style="margin-top:6px;">This policy applies to all applications published by Kreeda TV on Google Play Store.</div>
+  <div class="badges">
+    <span class="badge">GDPR Aware</span>
+    <span class="badge">CCPA Aware</span>
+    <span class="badge">COPPA Compliant</span>
+    <span class="badge">Google Play Policy Compliant</span>
+  </div>
+</footer>
+
+</body>
+</html>
